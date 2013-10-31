@@ -43,5 +43,21 @@ Remote invocations with SSH
 Private and public keys
 	lisätty sekä kotikoneelle että shell -> ukko
 
+What about the passwords?
+	shellillä vaati: eval `ssh-agent -s`
+	ennenku toimi ssh-add
+
+	ssh -X ukko086.hpc.cs.helsinki.fi
+	toimi ilman passphrase
+
+	jostain syystä vaatii joka kerta uudestaan evalit ja ssh-addit, liittyyn ilmeisesti 		etäkäyttöön?
+	joka ilmeisesti johtuu uuden agentin luomisesta joka login
+
+Keyring
+	toimii kotikoneella, etänä ei ssh:llä lähtenyt toimimaan
+
+The right file, at the right time
+
+
 
 
