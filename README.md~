@@ -15,3 +15,16 @@ Identity shift
 Man of chrome
 	man: command exited with status 3: aiheutti ongelmia, 
 	korjautui: sudo aptitude install groff
+	alias cman ="man --html=google-chrome $@"
+	alias cman="man --html=google-chrome $@"
+
+Permanent changes //tehty myös laitoksen koneille
+	.bash_profilessa sekä alias o="ls -latr", että alias ls="ls --color=auto"
+
+Remote shells with SSH
+
+	ukko086.hpc.cs.helsinki.fi
+
+	alias cman='man --html=google-chrome '
+	alias ls='ls --color=auto'
+	alias o='ls -latr'
