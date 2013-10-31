@@ -41,6 +41,7 @@ Remote invocations with SSH
 	tuloste erilainen, palauttaa kaikki jonossa ilman värejä
 
 Private and public keys
+	lisätty sekä kotikoneelle että shell -> ukko
 
 
 
