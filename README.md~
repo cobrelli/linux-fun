@@ -57,7 +57,7 @@ Keyring
 	toimii kotikoneella, etänä ei ssh:llä lähtenyt toimimaan
 
 The right file, at the right time
-
+	lisätty code snippetti .bashrc & .bash_profile. aliakset toimi myös .bash_aliaksista 		käsin
 
 
 
