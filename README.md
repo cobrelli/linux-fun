@@ -175,6 +175,8 @@ Inserting date
 
 	rsync --archive ~tkt_cam/public_html/2013/11/03 koulujutut/linux-fun/Week1/Sunday.03.11.2013
 
-	
+
+tiedostolistaus
+	siirretty kansioon Week1
 
 
