@@ -95,7 +95,86 @@ Shared home directories
 	cat koulujutut/linux-fun/Week1/hostname.txt 
 	melkinpaasi
 	
-	produce ja print toimii kätevästi esim
+	produce ja print toimii kätevästi esim:
 	ssh ukko086.hpc.cs.helsinki.fi "ls > ~/koulujutut/linux-fun/Week1/sharedls.txt;cat ~/koulujutut/linux-fun/Week1/sharedls.txt"
+
+enter rsync
+
+	rsync --archive --stats ~tkt_cam/public_html/2011/10/30/ koulujutut/linux-fun/Week1/Sunday.2011.10.30/
+
+	pelkällä rsyncillä --stats
+
+	Number of files: 25
+	Number of files transferred: 24
+	Total file size: 11179311 bytes
+	Total transferred file size: 11179311 bytes
+	Literal data: 11179311 bytes
+	Matched data: 0 bytes
+	File list size: 467
+	File list generation time: 0.006 seconds
+	File list transfer time: 0.000 seconds
+	Total bytes sent: 11182146
+	Total bytes received: 471
+
+	sent 11182146 bytes  received 471 bytes  4473046.80 bytes/sec
+	total size is 11179311  speedup is 1.00
+
+	2 rsync
+
+	Number of files: 25
+	Number of files transferred: 0
+	Total file size: 11179311 bytes
+	Total transferred file size: 0 bytes
+	Literal data: 0 bytes
+	Matched data: 0 bytes
+	File list size: 467
+	File list generation time: 0.006 seconds
+	File list transfer time: 0.000 seconds
+	Total bytes sent: 476
+	Total bytes received: 12
+
+	sent 476 bytes  received 12 bytes  976.00 bytes/sec
+	total size is 11179311  speedup is 22908.42
+
+	kumpikaan toiminnoista ei kerro mitään, tekevät vain hiljaa
+
+	rsync cp:n jälkeen
+
+	Number of files: 25
+	Number of files transferred: 0
+	Total file size: 11179311 bytes
+	Total transferred file size: 0 bytes
+	Literal data: 0 bytes
+	Matched data: 0 bytes
+	File list size: 467
+	File list generation time: 0.001 seconds
+	File list transfer time: 0.000 seconds
+	Total bytes sent: 476
+	Total bytes received: 12
+
+	sent 476 bytes  received 12 bytes  976.00 bytes/sec
+	total size is 11179311  speedup is 22908.42
+
+Time and date
+	date +%A.%d.%m.%Y
+
+	Sunday.03.11.2013
+
+Inserting date
+
+	koodi ---
+	
+	#!/bin/bash
+
+	echo "rsync --archive ~tkt_cam/public_html/`date +%Y/%m/%d` koulujutut/linux-fun/Week1/`date +%A.%d.%m.%Y`"
+
+	--- koodi
+
+
+	tuloste:
+
+	rsync --archive ~tkt_cam/public_html/2013/11/03 koulujutut/linux-fun/Week1/Sunday.03.11.2013
+
+	
 
 
