@@ -65,3 +65,9 @@ The right file, at the right time
 	ssh -X vito@shell.cs.helsinki.fi "ls"
 
 	-t pakottaa pty allokaation ja kutsutaan bashrc eikä bash_profile
+
+	tehtävään poistettu linkki aliaksiin bash_profilesta
+
+
+
+
