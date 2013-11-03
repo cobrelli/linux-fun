@@ -59,5 +59,9 @@ Keyring
 The right file, at the right time
 	lisätty code snippetti .bashrc & .bash_profile. aliakset toimi myös .bash_aliaksista 		käsin
 
+(Non-)logins
+	ssh -X vito@shell.cs.helsinki.fi -t "ls"
+	vs.
+	ssh -X vito@shell.cs.helsinki.fi "ls"
 
 
