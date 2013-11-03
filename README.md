@@ -95,7 +95,7 @@ Shared home directories
 	cat koulujutut/linux-fun/Week1/hostname.txt 
 	melkinpaasi
 	
-	produce ja print toimii kätevästi esim
+	produce ja print toimii kätevästi esim:
 	ssh ukko086.hpc.cs.helsinki.fi "ls > ~/koulujutut/linux-fun/Week1/sharedls.txt;cat ~/koulujutut/linux-fun/Week1/sharedls.txt"
 
 
