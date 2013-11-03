@@ -68,6 +68,34 @@ The right file, at the right time
 
 	tehtävään poistettu linkki aliaksiin bash_profilesta
 
+Shared home directories
 
+	ohessa output koko logista, vaati ssh agentin manuaalisen käynnistyksen (koska 		kotikone > shell.cs.helsinki.fi > ukko)
+
+	ssh ukko086.hpc.cs.helsinki.fi
+
+	Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-43-generic x86_64)
+
+	 * Documentation:  https://help.ubuntu.com/
+
+	 * This is node ukko086 of CS Department\'s high performance cluster Ukko.
+	 * For documentaiton see: 
+	 * https://www.cs.helsinki.fi/en/compfac/high-performance-cluster-ukko
+
+	 * Please remember to NOT STORE IMPORTANT DATA on local disk except temporarily.
+	 * Please do not leave idle sessions open. Log off after completing your tasks
+	   and cleaning up any temporary files.
+   
+	 * 11.10.2013: /cs/taatto filesystem had gotten full again. Please remove files
+	 * you do not need and please do not use it for long time storage.
+	Last login: Sun Nov  3 18:44:07 2013 from melkinpaasi.cs.helsinki.fi
+
+	vito@ukko086:~$ 
+
+	cat koulujutut/linux-fun/Week1/hostname.txt 
+	melkinpaasi
+	
+	produce ja print toimii kätevästi esim
+	ssh ukko086.hpc.cs.helsinki.fi "ls > ~/koulujutut/linux-fun/Week1/sharedls.txt;cat ~/koulujutut/linux-fun/Week1/sharedls.txt"
 
 
