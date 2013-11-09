@@ -1,0 +1,6 @@
+.:
+jep.txt
+k.txt
+ls-unsuccessful.txt
+sim-ls-failed.txt
+sim-ls-succesfull.txt

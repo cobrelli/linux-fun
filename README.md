@@ -179,4 +179,24 @@ Inserting date
 tiedostolistaus
 	siirretty kansioon Week1
 
+==============================================================
+
+Week 2
+
+The three most important files
+
+	ls /foObarR 2> ~/subdir/ls-unsuccessful.txt
+
+	result with cat
+
+	ls-unsuccessful.txt | pbcopy
+
+	ls: cannot access /foObarR: No such file or directory
+
+
+
+
+
+
+
 
