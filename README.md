@@ -193,10 +193,26 @@ The three most important files
 
 	ls: cannot access /foObarR: No such file or directory
 
+Two at once!
 
+	ls /trolol/ 2> sim-ls-failed.txt . > sim-ls-succesfull.txt
 
+	produces two files:
 
+	1. sim-ls-failed.txt with contents:
 
+		ls: /trolol/: No such file or directory
+
+	2. sim-ls-succesfull with contents:
+
+		.:
+		jep.txt
+		k.txt
+		ls-unsuccessful.txt
+		sim-ls-failed.txt
+		sim-ls-succesfull.txt
+
+Hey, what about stdin?
 
 
 
