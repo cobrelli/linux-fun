@@ -358,3 +358,22 @@ Rare exports
 
 Remote invocation
 
+	#! /bin/bash
+
+	hostname=$1
+	command=$2
+
+	#echo $hostname $command
+	ssh $hostname $command
+
+
+
+	output:
+
+	./remote-invocation.sh vito@shell.cs.helsinki.fi "ls ~/koulujutut/linux-fun"
+
+	README.md
+	README.md~
+	Week1
+	Week2
+
