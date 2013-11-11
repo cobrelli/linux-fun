@@ -214,5 +214,11 @@ Two at once!
 
 Hey, what about stdin?
 
+	if file is absent or - cat reads from standard input, you can also cat <<< lol
+
+	wc with cat
+	
+	cat jep.txt | wc
+	       2       3      12
 
 
