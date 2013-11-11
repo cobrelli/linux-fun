@@ -333,3 +333,28 @@ Special shell variables
 
 Difference between bash and bash
 
+	#! /bin/bash
+	variable=test
+
+	echo within first shell \(pid $$\): \$variable=$variable
+	bash -c 'echo within second shell \(pid $$\) \$variable=$variable'
+
+	output:
+	within first shell (pid 4049): $variable=test
+	within second shell (pid 4051) $variable=
+
+
+Rare exports
+
+	#! /bin/bash
+	export variable=test
+
+	echo within first shell \(pid $$\): \$variable=$variable
+	bash -c 'echo within second shell \(pid $$\) \$variable=$variable'
+
+	output:
+	within first shell (pid 4069): $variable=test
+	within second shell (pid 4071) $variable=test
+
+Remote invocation
+
