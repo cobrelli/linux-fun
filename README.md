@@ -322,3 +322,14 @@ Intro to variables
 	HOSTNAME -name of the current host
 
 Special shell variables
+
+	#! /bin/bash
+	echo "$@"
+
+	./echoVariables.sh asd `ls`
+
+	output: 
+	asd sim-ls-succesfull.txt sim-ls-failed.txt numberOfFiles.txt ls-unsuccessful.txt ls-homedir.sh list-pics-with-date.sh list-all-pics.sh list-all-from-nov.sh k.txt jep.txt find-pic-number-by-current-month.sh echoVariables.sh count-pics.sh count-homedir.sh
+
+Difference between bash and bash
+
