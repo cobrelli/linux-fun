@@ -217,8 +217,64 @@ Hey, what about stdin?
 	if file is absent or - cat reads from standard input, you can also cat <<< lol
 
 	wc with cat
-	
-	cat jep.txt | wc
-	       2       3      12
+
+	cat jep.txt | wc -l
+	       3
+
+Useless use of cat
+
+	hopefully I wont abuse it much ;f
+	>cat safety
+
+Pipelines
+
+	/bin/ls ~ | wc -l
+	       9
+
+	ls > numberOfFiles.txt
+
+	ls | wc -l
+		   6
+
+    cat numberOfFiles.txt | wc -l
+    	   6
+
+    
+    jep.txt
+	k.txt
+	ls-unsuccessful.txt
+	numberOfFiles.txt
+	sim-ls-failed.txt
+	sim-ls-succesfull.txt
+
+Filters
+
+	ls ~ | grep 'e'
+
+	Desktop
+	Documents
+	Movies
+	Pictures
+
+	ls ~ | grep 'e' | wc -l
+	        4
+
+Interlude: bash
+
+	which bash
+	/bin/bash
+
+	count-homedir.sh
+
+	#! /bin/bash
+	ls ~ | wc -l
+
+	output:
+	        9
+
+Some assembly required
+
+
+
 
 
