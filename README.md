@@ -274,7 +274,51 @@ Interlude: bash
 
 Some assembly required
 
+	ls -R
 
+	recursive ls
 
+	phew.. done with crazy ass regex
 
+	ls -R ~tkt_cam/public_html/ | grep '201[1-9]/1[1-2]\|201[2-9]/\|^20111[1-2]\|^201[2-9]'
 
+Just the pics, ma'am
+
+	ls -R ~tkt_cam/public_html/ | grep '.jpg'
+
+Umm, how much is that?
+	
+	ls -R ~tkt_cam/public_html/ | grep '.jpg' | wc -l
+	101949	
+
+Remember the backticks
+
+	ls -R ~tkt_cam/public_html/ | grep '2011'$(date +%m%d)'[0-9]\{4\}.jpg'
+
+	wc -l gives 24, so its correct
+
+The big brother of ls
+
+	find ~ -type f
+	normal files in root
+
+Everybody together now
+
+	find  ~tkt_cam/public_html/ -regextype posix-extended -regex '.*/2011'$(date +%m%d)'[0-9]{4}.jpg' | wc -l	
+
+	output is: 24
+
+Gregory and Julian
+
+	date --date "last thursday last week"
+	Thu Oct 31 00:00:00 EET 2013
+
+Intro to variables
+
+	BASH_ARGV -contains all parameters of current bash call stack
+
+	BASH_VERSION -contains string with version of current bash instance
+
+	HOSTNAME -name of the current host
+
+Special shell variables
