@@ -383,6 +383,17 @@ Week 3
 
 Not glue but tar
 
+	tar czf tar-test.tar.gz *.sh
+	tar cjf tar-test.tar.bz2 *.sh
+	tar cf tar-test-uncompressed.tar *.sh
+
+	-rw-r--r--  1 cobu  staff    776 Nov 14 19:32 tar-test.tar.gz	
+    -rw-r--r--  1 cobu  staff    824 Nov 14 19:38 tar-test.tar.bz2
+    -rw-r--r--  1 cobu  staff  12288 Nov 14 19:38 tar-test-uncompressed.tar
+
+    piped way to compress with tar
+
+    tar cf - *.sh | gzip > test-tar-piped.tar.gz
 
 
 
