@@ -414,5 +414,15 @@ Fetch and extract
 
 No more disk space
 
+	Finally managed to make it work. Using my mbp so I cant connect directly to ukko so I had to learn about nested ssh calls and then finally run the uncompress command with -dc option to direct output and then by > to direct where i wanted it.
 
+	(the only problem I ran into was because passphrases, the ssh will wait for the passphase and as the output is directed it doesn't show it on the screen. I thought the passphrase query would remain in the test.tar file but it seems to only be included when there are errors, or then possibly bzip2 somehow overwrites it)
+
+	ssh -t vito@shell.cs.helsinki.fi 'ssh vito@ukko086.hpc.cs.helsinki.fi "bzip2 -dc temp/*"' > test.tar
+
+    -rw-r--r--  1 cobu  staff  385955311 Nov 15 14:09 test.tar
+
+    Was propably the hardest exercise so far.. (possibly because of my setup)
+
+Ready, steady, go
 
