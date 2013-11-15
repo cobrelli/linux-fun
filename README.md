@@ -395,5 +395,22 @@ Not glue but tar
 
     tar cf - *.sh | gzip > test-tar-piped.tar.gz
 
+Local and network file systems
+	
+	mbp
+	/dev/disk0s2 on / (hfs, local, journaled)
+
+Fetch and extract
+
+	compressed version
+	curl -O http://wiki.helsinki.fi/download/attachments/124126879/lost24-monitor-temps-and-fans-v2.tar.bz2
+
+	uncompressed version (curled from site, pipelined and uncompressed)
+	curl http://wiki.helsinki.fi/download/attachments/124126879/lost24-monitor-temps-and-fans-v2.tar.bz2 | bzip2 -d > lost-24-uncompressed.tar
+
+	-rwxr--r--  1 cobu  staff  383088640 Nov 15 07:45 lost-24-uncompressed.tar
+
+	deleted the file afterwards, kinda huge uncompressed
+
 
 
