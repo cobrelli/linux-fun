@@ -412,6 +412,9 @@ Fetch and extract
 
 	deleted the file afterwards, kinda huge uncompressed
 
+	AAAAAND incase i misunderstood i'll include way to pipeline with files
+	curl http://wiki.helsinki.fi/download/attachments/124126879/lost24-monitor-temps-and-fans-v2.tar.bz2 | tar -xjvf -
+
 No more disk space
 
 	Finally managed to make it work. Using my mbp so I cant connect directly to ukko so I had to learn about nested ssh calls and then finally run the uncompress command with -dc option to direct output and then by > to direct where i wanted it.
@@ -424,5 +427,41 @@ No more disk space
 
     Was propably the hardest exercise so far.. (possibly because of my setup)
 
+    ssh -t vito@shell.cs.helsinki.fi 'ssh vito@ukko086.hpc.cs.helsinki.fi "tar -xjOf temp/lost24-monitor-temps-and-fans-v2.tar.bz2"' > lol.lol
+
+    now has propably? correctly outputs everything extracted and writes them to lol.lol file, but problem is now how to make them individual files?!
+
+    propably something nasty because of the nested ssh... and passphrase query becoming the first thing in stdout
+
 Ready, steady, go
+
+	time ssh vito@ukko086.hpc.cs.helsinki.fi "bzip2 -dc temp/*" > test.tar
+
+	real	0m25.176s
+	user	0m9.753s
+	sys	0m1.524s
+
+	real	0m26.871s
+	user	0m9.433s
+	sys	0m1.608s
+
+	real	0m27.316s
+	user	0m9.313s
+	sys	0m1.952s
+
+	time curl http://wiki.helsinki.fi/download/attachments/124126879/lost24-monitor-temps-and-fans-v2.tar.bz2 | bzip2 -d > lost-24-uncompressed.tar
+
+	real	0m20.501s
+	user	0m14.229s
+	sys	0m0.864s
+
+	real	0m17.187s
+	user	0m11.861s
+	sys	0m0.844s
+
+	real	0m25.852s
+	user	0m20.565s
+	sys	0m0.812s
+
+The monitor data set
 
