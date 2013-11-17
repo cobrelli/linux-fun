@@ -465,3 +465,98 @@ Ready, steady, go
 
 The monitor data set
 
+	whoa, lotsa stuff O.o
+	974M	lost24/
+
+grep and cut
+
+	cat `find lost24/ -name hp-temps.txt | grep '2011.12.25'` | grep 'PROCESSOR_ZONE' | cut -c32-34 | sort | uniq
+
+	22C
+	23C
+	24C
+	25C
+	26C
+	27C
+	28C
+	29C
+	30C
+	31C
+
+Don't run with scissors 
+
+	cat `find lost24/ -name hp-temps.txt | grep '2011.12.25'` | grep 'PROCESSOR_ZONE' | gsed -e 's/\ \+/,/g' -e 's/\//,/g'
+
+	#1,PROCESSOR_ZONE,31C,87F,62C,143F,
+
+Too long, didn't read
+
+	find lost24/ -name *hp-temps.txt -path */2011.11.*/* -exec grep 'PROCESSOR_ZONE' {} \;
+
+	The output was huge..
+	wc -l gave around 8640
+	which sounds about right (12 times per hour*24 hours per day*30 days)
+
+Escape to a true friend
+
+	If *temps.txt is not escaped with '' shell will expand it when there is temps.txt in the current folder and search will fail
+
+	find lost24/monitor/2011.12.25 -name *temps.txt
+	find: temps.txt: unknown primary or operator
+
+	find lost24/monitor/2011.12.25 -name '*temps.txt'
+	lost24/monitor/2011.12.25/00:00/hp-temps.txt
+	lost24/monitor/2011.12.25/00:05/hp-temps.txt
+	lost24/monitor/2011.12.25/00:10/hp-temps.txt
+	lost24/monitor/2011.12.25/00:15/hp-temps.txt
+	...
+
+Intro to loops
+
+
+	#!/bin/bash
+	for arg in "$@";
+		do
+			echo "$arg"
+		done;
+
+	f.ex
+	./loop-test.sh 1 2
+
+	output:
+	1
+	2
+
+The Immelmann
+
+Sidestep: testing
+
+Hottest day
+
+	#!/bin/bash
+	hottest=0
+	hottest_file=0
+	for file in $(find lost24/ -name *hp-temps.txt -path */2011.11.*/*)
+	do
+		temp=`cat $file | grep 'PROCESSOR_ZONE' | gsed -e 's/\ \+/,/g' -e 's/\//,/g' | cut -c19-20`
+		if [ "$hottest" -lt "$temp" ]; then
+			hottest_file=$file
+			hottest=$temp
+		fi
+	done;
+
+	echo "Hottest temp"
+	echo "$hottest"
+	echo "Found in"
+	echo "$hottest_file"
+	#End of Script
+
+	output:
+	Hottest temp
+	29
+	Found in
+	lost24//monitor/2011.11.30/23:55/hp-temps.txt
+
+
+
+
