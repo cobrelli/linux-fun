@@ -529,7 +529,27 @@ Intro to loops
 
 The Immelmann
 
+	#!/bin/bash
+	for file in $1/*; do
+		inputfile=$file
+		base=$(basename $inputfile)
+		prefix=${base%.jpg}
+		outputfile=test/$prefix-hipstah.jpg
+		convert -sepia-tone 60% +polaroid $inputfile $outputfile
+	done
+
+    -rw-r--r--   1 cobu  staff  440950 Nov 17 23:30 201110300100-hipstah.jpg
+    -rw-r--r--   1 cobu  staff  447427 Nov 17 23:30 201110300000-hipstah.jpg
+
+
 Sidestep: testing
+
+		if [ "$hottest" -lt "$temp" ]; then
+			hottest_file=$file
+			hottest=$temp
+		fi
+
+		didnt notice at first that reason of problems was no spaces between variables and []
 
 Hottest day
 
