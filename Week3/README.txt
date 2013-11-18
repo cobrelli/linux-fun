@@ -40,7 +40,7 @@ No more disk space
 
 	(the only problem I ran into was because passphrases, the ssh will wait for the passphase and as the output is directed it doesn't show it on the screen. I thought the passphrase query would remain in the test.tar file but it seems to only be included when there are errors, or then possibly bzip2 somehow overwrites it)
 
-	ssh -t vito@shell.cs.helsinki.fi 'ssh vito@ukko086.hpc.cs.helsinki.fi "bzip2 -dc temp/*"' > test.tar
+	ssh -t vito@shell.cs.helsinki.fi 'ssh vito@ukko086.hpc.cs.helsinki.fi "bzip2 -dc temp/*"' | tar -xvf -
 
     -rw-r--r--  1 cobu  staff  385955311 Nov 15 14:09 test.tar
 
