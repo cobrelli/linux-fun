@@ -584,6 +584,8 @@ Week 4
 
 Longcat
 
+	Uses head.txt and tail.txt, stomach is looped x times
+
 	#!/bin/bash
 	if [ $1 -gt 0 ];then
 		cat head.txt

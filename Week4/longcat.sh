@@ -6,7 +6,6 @@ if [ $1 -gt 0 ];then
 	do
 		echo '       |       |'
 	done
-
 	cat tail.txt
 	if [ $1 -gt 1 ];then
 		echo '                Longcat.'
