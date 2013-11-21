@@ -657,3 +657,8 @@ Daily maximums redux
 
 Fast draws with GnuPlot
 
+	graph in max-daily-temps.pdf
+
+Winter is Coming
+
+
