@@ -654,3 +654,6 @@ Daily maximums redux
 	monitor 2012.03.19  39
 	monitor 2012.03.20  41
 	monitor 2012.03.21  43
+
+Fast draws with GnuPlot
+
