@@ -679,4 +679,13 @@ Winter is Coming
 
 I didn't see that one coming
 
+	graph in daily-temps.pdf
+
+Onwards to getopts and switch
+
+
+
+
+
+
 
