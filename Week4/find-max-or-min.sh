@@ -23,7 +23,7 @@ while getopts ":htcwp:" opt; do
 			cmd="./min-temp-sed.sh"
 			;;
 		w)
-			cmd="./max-temp-sed.sh"
+			cmd="./max-temp-sed-version.sh"
 			;;
 		p)
 			cmd="$cmd $OPTARG"
