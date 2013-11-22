@@ -17,7 +17,7 @@ Arguments:
 while getopts ":htcwp:" opt; do
 	case $opt in
 		t)
-			opts="./in-tsv-format.sh"
+			opts="./in-tsv-format-sed.sh"
 			;;
 		c)
 			cmd="./min-temp-sed.sh"
