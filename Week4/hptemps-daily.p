@@ -10,5 +10,5 @@ set terminal postscript eps colour enhanced
 set output "daily-temps.eps"
 set title "Daily temperatures of processor zone on host lost24"
 plot "max-daily-temps.tsv" using 1:3 title 'Max temp' with linespoints, \
-     "min-daily-temps.tsv" using 2:3 title 'Min temp' with linespoints
+     "min-daily-temps.tsv" using 1:3 title 'Min temp' with linespoints
 
