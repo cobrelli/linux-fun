@@ -147,3 +147,11 @@ And that's a wrap
 	else
 		$cmd
 	fi
+
+
+
+	./find-max-or-min.sh -tcp lost24/monitor/
+	2012.02.02 04:15  7
+
+	./find-max-or-min.sh -twp lost24/monitor/
+	2012.04.25 10:55  54
