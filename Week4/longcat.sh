@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $1 -gt 0 ];then
+if [ $1 -eq $1 2> /dev/null ];then
 	head -10 shortcat.txt
 	for (( i=1; i<=$1; i++ ))
 	do
