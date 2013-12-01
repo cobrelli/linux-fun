@@ -740,5 +740,28 @@ And that's a wrap
 
 Week 5
 
+Counting in your head
 
+	#!/bin/bash
+	i=0
+	sum=0
+	for param in $@
+	do
+		let "sum += param"
+		let "i += 1"
+	done
 
+	echo "scale=2; $sum / $i" | bc
+
+	output:
+
+	./average.sh 2 3 4
+	3.00
+	./average.sh 2 3 3
+	2.66
+	./average.sh 2 3 3
+	2.66
+	./average.sh 1 6 9
+	5.33
+
+Gone in 60 seconds (aka lost24-monitor-recap-megafun)	
