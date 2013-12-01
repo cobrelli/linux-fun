@@ -765,3 +765,32 @@ Counting in your head
 	5.33
 
 Gone in 60 seconds (aka lost24-monitor-recap-megafun)	
+
+	#!/bin/bash
+	files=$(find lost24/monitor/ -name hp-temps.txt -exec grep "PROCESSOR_ZONE" {} + | sed -e 's/\s\+/,/g' -e 's/\//\,/g' -e 's/C//g')
+	trim=$(echo "$files" | cut -d , -f 7 | cut -d 'C' -f 1)
+	files=$(echo "$files" | cut -d , -f 3,4,7)
+	hottest=0
+
+	for line in $trim
+	do
+		if [ "$line" -gt "$hottest" ]
+		then
+			hottest=$line
+		fi
+	done
+
+	echo "$hottest"
+	echo "$files" | grep "$hottest"
+
+	>>>
+	output:
+	time ./minmax-megahot.sh 
+	54
+	2012.04.25,10:55,54
+	2012.04.25,10:50,54
+
+	real	0m6.549s
+	user	0m5.328s
+	sys	0m2.700s
+
