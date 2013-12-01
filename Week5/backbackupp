@@ -1,0 +1,20 @@
+files=$(find lost24/monitor/ -name hp-temps.txt -exec grep "PROCESSOR_ZONE" {} + | sed -e 's/\s\+/,/g' -e 's/\//\,/g' -e 's/C//g')
+trim=$(echo "$files" | cut -d , -f 7 | cut -d 'C' -f 1)
+files=$(echo "$files" | cut -d , -f 3,4,7)
+hottest=0
+line=""
+
+for line in $trim
+do
+	#l=$(echo $line | cut -d 'C' -f3)
+	#echo "$line"
+	if [ "$line" -gt "$hottest" ]
+	then
+		hottest=$line
+		#hotffile=$line
+	fi
+	#echo $line  | rev | cut -d , -f1 | cut -c2- | rev
+done
+echo "$hottest"
+echo "$files" | grep "$hottest"
+#echo "$files"
