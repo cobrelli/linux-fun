@@ -781,7 +781,7 @@ Gone in 60 seconds (aka lost24-monitor-recap-megafun)
 	done
 
 	echo "$hottest"
-	echo "$files" | grep "$hottest"
+	echo "$files" | grep ".*,.*,$hottest"
 
 	>>>
 	output:
@@ -790,7 +790,17 @@ Gone in 60 seconds (aka lost24-monitor-recap-megafun)
 	2012.04.25,10:55,54
 	2012.04.25,10:50,54
 
+	real	0m8.172s
+	user	0m6.440s
+	sys	0m3.124s
+
+	/////first
 	real	0m6.549s
 	user	0m5.328s
 	sys	0m2.700s
+
+	/////second try
+	real	0m7.158s
+	user	0m5.708s
+	sys	0m2.916s
 
