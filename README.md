@@ -1,6 +1,8 @@
 linux-fun
 =========
 
+Stuff written during Linux Fundamentals course
+
 Week1
 
 Output redirection
